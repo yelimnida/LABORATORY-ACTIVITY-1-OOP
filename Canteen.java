@@ -4,7 +4,13 @@ public class Canteen {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
+        int totalItems = 0;
+        double totalBeforeDiscount = 0.0;
+        double totalDiscount = 0.0;
+
         char orderAgain = 'Y';
+
+        //menu menu menuu
 
         while (orderAgain == 'Y' || orderAgain == 'y') {
             System.out.println("===== M E N U =====");
@@ -58,16 +64,32 @@ public class Canteen {
             double discountAmount = subtotal * discount;
             double orderTotal = subtotal - discountAmount;
 
+            // order output
             System.out.println();
-            System.out.println("Subtotal: $" + subtotal);
-            System.out.println("Discount: $" + discountAmount);
-            System.out.println("Order total: $" + orderTotal);
+            System.out.printf("Subtotal: $%.2f%n", subtotal);
+            System.out.printf("Discount: $%.2f%n", discountAmount);
+            System.out.printf("Order total: $%.2f%n", orderTotal);
             System.out.println();
+
+            // total total
+            totalItems += quantity;
+            totalBeforeDiscount += subtotal;
+            totalDiscount += discountAmount;
 
             System.out.print("Do you want to order again? (Y/N): ");
             orderAgain = scanner.next().charAt(0);
             System.out.println();
         }
+
+        // summary and end
+        double finalAmount = totalBeforeDiscount - totalDiscount;
+
+        System.out.println("----- ORDER SUMMARY -----");
+        System.out.println("Total items: " + totalItems);
+        System.out.printf("Total before discount: $%.2f%n", totalBeforeDiscount);
+        System.out.printf("Total discount: $%.2f%n", totalDiscount);
+        System.out.printf("Final amount: $%.2f%n", finalAmount);
+        System.out.println("Thank you for ordering!");
 
         scanner.close();
     }

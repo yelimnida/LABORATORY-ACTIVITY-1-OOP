@@ -14,11 +14,11 @@ public class Canteen {
 
         while (orderAgain == 'Y' || orderAgain == 'y') {
             System.out.println("===== M E N U =====");
-            System.out.println("1. Burger     - $80.00");
-            System.out.println("2. Pizza      - $120.00");
-            System.out.println("3. Pasta      - $100.00");
-            System.out.println("4. Sandwich   - $70.00");
-            System.out.println("5. Milk Tea   - $90.00");
+            System.out.println("1. Chicken with Rice     - $95.00");
+            System.out.println("2. Spaghetti             - $60.00");
+            System.out.println("3. Hotdog                - $45.00");
+            System.out.println("4. French Fries          - $55.00");
+            System.out.println("5. Iced Tea              - $30.00");
             System.out.println();
 
             System.out.print("Enter item number: ");
@@ -43,11 +43,11 @@ public class Canteen {
 
             double price = 0.0;
             switch (itemNumber) {
-                case 1: price = 80.00; break;
-                case 2: price = 120.00; break;
-                case 3: price = 100.00; break;
-                case 4: price = 70.00; break;
-                case 5: price = 90.00; break;
+                case 1: price = 95.00; break;
+                case 2: price = 60.00; break;
+                case 3: price = 45.00; break;
+                case 4: price = 55.00; break;
+                case 5: price = 30.00; break;
             }
 
             double subtotal = price * quantity;
